@@ -15,8 +15,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Bazel version"
-          command: "bazel --version"
+          name: "Install Bazelisk"
+          command: |
+            go install github.com/bazelbuild/bazelisk@latest
+            sudo ln -s $(which bazelisk) /usr/local/bin/bazel
+            bazel --version
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
