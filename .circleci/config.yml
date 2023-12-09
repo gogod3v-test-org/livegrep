@@ -24,7 +24,7 @@ jobs:
       - run:
           name: "Enable Build Cache for Bazel"
           command: |
-            curl -fL https://storage.googleapis.com/quick-test/bitrise-build-cache-cli/bitrise-build-cache-"$(uname -s)"-"$(uname -m)"-0.0.3 > ~/bitrise-build-cache
+            curl -fL https://storage.googleapis.com/quick-test/bitrise-build-cache-cli/bitrise-build-cache-"$(uname -s)"-"$(uname -m)"-0.0.4 > ~/bitrise-build-cache
             chmod +x ~/bitrise-build-cache
             ~/bitrise-build-cache enable-for bazel
       - run:
